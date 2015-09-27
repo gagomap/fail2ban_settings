@@ -103,7 +103,7 @@ action   = iptables-multiport[name=NoLoginFailures, port="http,https"]
             sendmail-whois[name=NoLoginFailures, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 bantime  = 3600
-maxretry = 6
+maxretry = 3
 
 [nginx-noscript]
 
@@ -113,7 +113,7 @@ action   = iptables-multiport[name=NoScript, port="http,https"]
             sendmail-whois[name=NoScript, dest=user@yourmail.com, sender=root]
 filter   = nginx-noscript
 logpath  = /var/log/nginx/*access.log
-maxretry = 6
+maxretry = 3
 findtime = 3600
 bantime  = 86400
 
@@ -161,7 +161,7 @@ filter   = nginx-nohome
 action   = iptables-multiport[name=Nohome, port="http,https"]
             sendmail-whois[name=Nohome, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*access.log
-maxretry = 3
+maxretry = 2
 findtime = 3600
 bantime  = 86400
 
@@ -173,7 +173,18 @@ filter   = nginx-noproxy
 action   = iptables-multiport[name=Noproxy, port="http,https"]
             sendmail-whois[name=Noproxy, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*access.log
-maxretry = 3
+maxretry = 2
+findtime = 3600
+bantime  = 86400
+
+[nginx-botsearch]
+enabled  = true
+port     = http,https
+filter   = nginx-botsearch
+action   = iptables-multiport[name=NoBotsearch, port="http,https"]
+            sendmail-whois[name=NoBotsearch, dest=user@yourmail.com, sender=root]
+logpath  = /var/log/nginx/*error.log
+maxretry = 2
 findtime = 3600
 bantime  = 86400
 
