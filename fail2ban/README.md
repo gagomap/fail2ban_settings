@@ -1,11 +1,11 @@
-This is fail2ban settings for fai2ban 0.8.11 on ubuntu 14.04 LTS
+This is fail2ban settings for fail2ban 0.8.11 on Ubuntu 14.04 LTS
 
 ## Install:
 
 ```bash
 git clone git://github.com/gagomap/fail2ban_settings.git
 ```
-Then copy the folder name "fail2ban" inside to /etc/fail2ban
+Then copy the folder name "fail2ban" inside fail2ban_settings to /etc/fail2ban  (overwrite)
 
 ## Note:
 
