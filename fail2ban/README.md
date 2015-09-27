@@ -36,4 +36,4 @@ location = /wp-login.php {
 Link:
 ```bash
 https://rtcamp.com/tutorials/nginx/fail2ban/
-```bash
+```
