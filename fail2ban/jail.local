@@ -135,7 +135,7 @@ filter   = php-url-fopen
 logpath  = /var/log/nginx/*access.log
 maxretry = 1
 findtime = 3600
-bantime  = 86400
+bantime  = 2592000
 
 [nginx-nohome]
 
