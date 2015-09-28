@@ -50,22 +50,20 @@ action = %(action_mw)s
 
 # in /etc/fail2ban/jail.local.
 
-[ssh]
+[sshd]
 
 enabled  = true
 port     = 22
 filter   = sshd
-action   = iptables-multiport[name=SSHD, port="22", protocol=tcp]
 logpath  = /var/log/auth.log
 bantime  = 3600
 maxretry = 3
 
-[ssh-ddos]
+[sshd-ddos]
 
 enabled  = true
 port     = 22
 filter   = sshd-ddos
-action   = iptables-multiport[name=SSHDDOS, port="22", protocol=tcp]
 logpath  = /var/log/auth.log
 bantime  = 3600
 maxretry = 6
@@ -77,7 +75,6 @@ maxretry = 6
 enabled  = true
 port     = http,https
 filter   = apache-badbots
-action   = iptables-multiport[name=BadBots, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 bantime  = 86400
 maxretry = 1
@@ -87,7 +84,6 @@ maxretry = 1
 enabled  = true
 port     = http,https
 filter   = nginx-http-auth
-action   = iptables-multiport[name=NoAuthFailures, port="http,https"]
 logpath  = /var/log/nginx/*error.log
 bantime  = 3600
 maxretry = 3
@@ -97,7 +93,6 @@ maxretry = 3
 enabled  = true
 port     = http,https
 filter   = nginx-login
-action   = iptables-multiport[name=NoLoginFailures, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 bantime  = 3600
 maxretry = 3
@@ -107,7 +102,6 @@ maxretry = 3
 enabled  = true
 port     = http,https
 filter   = nginx-noscript
-action   = iptables-multiport[name=NoScript, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 3
 findtime = 3600
@@ -118,7 +112,6 @@ bantime  = 86400
 enabled  = true
 port     = http,https
 filter   = nginx-badrequests
-action   = iptables-multiport[name=BadRequests, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 3
 findtime = 3600
@@ -129,7 +122,6 @@ bantime  = 2592000
 enabled  = true
 port     = http,https
 filter   = 403block
-action   = iptables-multiport[name=403Block, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 findtime = 3600
 maxretry = 3
@@ -140,7 +132,6 @@ bantime  = 86400
 enabled  = true
 port     = http,https
 filter   = php-url-fopen
-action   = iptables-multiport[name=PhpUrlfOpen, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 1
 findtime = 3600
@@ -151,7 +142,6 @@ bantime  = 86400
 enabled  = true
 port     = http,https
 filter   = nginx-nohome
-action   = iptables-multiport[name=NoHome, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 2
 findtime = 3600
@@ -162,7 +152,6 @@ bantime  = 86400
 enabled  = true
 port     = http,https
 filter   = nginx-noproxy
-action   = iptables-multiport[name=NoProxy, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 2
 findtime = 3600
@@ -172,7 +161,6 @@ bantime  = 86400
 enabled  = true
 port     = http,https
 filter   = nginx-botsearch
-action   = iptables-multiport[name=NoBotsearch, port="http,https"]
 logpath  = /var/log/nginx/*error.log
 maxretry = 2
 findtime = 3600
@@ -184,6 +172,7 @@ bantime  = 86400
 [ssh-repeater]
 
 enabled  = true
+port     = 22
 filter   = sshd
 action   = iptables-repeater[name=sshRepeater]
            sendmail-whois[name=sshRepeater, dest=user@yourdomain.com, sender=root]
@@ -223,7 +212,6 @@ bantime  = 31536000
 enabled  = true
 port     = http,https
 filter   = nginx-req-limit
-action   = iptables-multiport[name=ReqLimit, port="http,https", protocol=tcp]
 logpath  = /var/log/nginx/*error.log
 findtime = 600
 bantime  = 7200
@@ -253,5 +241,3 @@ filter   = postfix-sasl
 logpath  = /var/log/mail.log
 bantime  = 3600
 maxretry = 6
-
-
