@@ -1,4 +1,4 @@
-This is fail2ban settings for fail2ban 0.8.11 on Ubuntu 14.04 LTS
+This is fail2ban settings for fail2ban 0.8.13 on Ubuntu 14.04 LTS
 
 ## Install fail2ban
 
@@ -22,7 +22,7 @@ http://neuro.debian.net/install_pkg.html?p=fail2ban
 ```bash
 git clone git://github.com/gagomap/fail2ban_settings.git
 ```
-Then copy the folder name "fail2ban" inside fail2ban_settings to /etc/fail2ban  (overwrite)
+Then copy the folder name "fail2ban" inside fail2ban_settings to /etc/fail2ban  (use "cp -rf" to overwrite)
 
 ## Note:
 
@@ -61,7 +61,7 @@ Link:
 ```bash
 http://stuffphilwrites.com/2013/03/permanently-ban-repeat-offenders-fail2ban/
 ```
-## Stop user enumeration plugin
+## Stop user enumeration plugin (must install)
 Link:
 ```bash
 https://github.com/recetasdemama/wordpress/tree/master/wp-content/plugins/stop-user-enumeration
