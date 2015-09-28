@@ -12,7 +12,8 @@ maxretry = 3
 #      This issue left ToDo, so polling is default backend for now
 backend = polling
 
-destemail = user@yourmail.com
+sender = root@localhost
+destemail = user@yourdomain.com
 
 # ACTIONS
 
@@ -49,24 +50,22 @@ action = %(action_mw)s
 
 # in /etc/fail2ban/jail.local.
 
-[sshd]
+[ssh]
 
 enabled  = true
 port     = 22
 filter   = sshd
-action   = iptables-multiport[name=sshd, port="22", protocol=tcp]
-            sendmail-whois[name=sshd, dest=user@yourmail.com, sender=root]
+action   = iptables-multiport[name=SSHD, port="22", protocol=tcp]
 logpath  = /var/log/auth.log
 bantime  = 3600
 maxretry = 3
 
-[sshd-ddos]
+[ssh-ddos]
 
 enabled  = true
 port     = 22
 filter   = sshd-ddos
-action   = iptables-multiport[name=sshdddos, port="22", protocol=tcp]
-            sendmail-whois[name=sshdddos, dest=user@yourmail.com, sender=root]
+action   = iptables-multiport[name=SSHDDOS, port="22", protocol=tcp]
 logpath  = /var/log/auth.log
 bantime  = 3600
 maxretry = 6
@@ -76,9 +75,9 @@ maxretry = 6
 [nginx-badbots]
 
 enabled  = true
+port     = http,https
 filter   = apache-badbots
 action   = iptables-multiport[name=BadBots, port="http,https"]
-            sendmail-whois[name=BadBots, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 bantime  = 86400
 maxretry = 1
@@ -89,7 +88,6 @@ enabled  = true
 port     = http,https
 filter   = nginx-http-auth
 action   = iptables-multiport[name=NoAuthFailures, port="http,https"]
-            sendmail-whois[name=NoAuthFailures, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*error.log
 bantime  = 3600
 maxretry = 3
@@ -100,7 +98,6 @@ enabled  = true
 port     = http,https
 filter   = nginx-login
 action   = iptables-multiport[name=NoLoginFailures, port="http,https"]
-            sendmail-whois[name=NoLoginFailures, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 bantime  = 3600
 maxretry = 3
@@ -109,9 +106,8 @@ maxretry = 3
 
 enabled  = true
 port     = http,https
-action   = iptables-multiport[name=NoScript, port="http,https"]
-            sendmail-whois[name=NoScript, dest=user@yourmail.com, sender=root]
 filter   = nginx-noscript
+action   = iptables-multiport[name=NoScript, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 3
 findtime = 3600
@@ -120,10 +116,9 @@ bantime  = 86400
 [nginx-badrequests]
 
 enabled  = true
-filter   = nginx-badrequests
 port     = http,https
+filter   = nginx-badrequests
 action   = iptables-multiport[name=BadRequests, port="http,https"]
-            sendmail-whois[name=BadRequests, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 maxretry = 3
 findtime = 3600
@@ -135,7 +130,6 @@ enabled  = true
 port     = http,https
 filter   = 403block
 action   = iptables-multiport[name=403Block, port="http,https"]
-            sendmail-whois[name=403Block, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 findtime = 3600
 maxretry = 3
@@ -146,8 +140,7 @@ bantime  = 86400
 enabled  = true
 port     = http,https
 filter   = php-url-fopen
-action   = iptables-multiport[name=PhpUrlOpen, port="http,https"]
-            sendmail-whois[name=PhpUrlOpen, dest=user@yourmail.com, sender=root]
+action   = iptables-multiport[name=PhpUrlfOpen, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 1
 findtime = 3600
@@ -158,8 +151,7 @@ bantime  = 86400
 enabled  = true
 port     = http,https
 filter   = nginx-nohome
-action   = iptables-multiport[name=Nohome, port="http,https"]
-            sendmail-whois[name=Nohome, dest=user@yourmail.com, sender=root]
+action   = iptables-multiport[name=NoHome, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 2
 findtime = 3600
@@ -170,8 +162,7 @@ bantime  = 86400
 enabled  = true
 port     = http,https
 filter   = nginx-noproxy
-action   = iptables-multiport[name=Noproxy, port="http,https"]
-            sendmail-whois[name=Noproxy, dest=user@yourmail.com, sender=root]
+action   = iptables-multiport[name=NoProxy, port="http,https"]
 logpath  = /var/log/nginx/*access.log
 maxretry = 2
 findtime = 3600
@@ -182,7 +173,6 @@ enabled  = true
 port     = http,https
 filter   = nginx-botsearch
 action   = iptables-multiport[name=NoBotsearch, port="http,https"]
-            sendmail-whois[name=NoBotsearch, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*error.log
 maxretry = 2
 findtime = 3600
@@ -196,7 +186,7 @@ bantime  = 86400
 enabled  = true
 filter   = sshd
 action   = iptables-repeater[name=sshRepeater]
-           sendmail-whois[name=sshRepeater, dest=user@yourmail.com, sender=root]
+           sendmail-whois[name=sshRepeater, dest=user@yourdomain.com, sender=root]
 logpath  = /var/log/auth.log
 maxretry = 21
 findtime = 31536000
@@ -208,7 +198,7 @@ enabled  = true
 port     = http,https
 filter   = nginx-badrequests
 action   = iptables-repeater[name=BadrequestsRepeater]
-            sendmail-whois[name=BadrequestsRepeater, dest=user@yourmail.com, sender=root]
+            sendmail-whois[name=BadrequestsRepeater, dest=user@yourdomain.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 maxretry = 35
 findtime = 31536000
@@ -220,7 +210,7 @@ enabled  = true
 port     = http,https
 filter   = 403block
 action   = iptables-repeater[name=403blockRepeater]
-            sendmail-whois[name=403blockRepeater, dest=user@yourmail.com, sender=root]
+            sendmail-whois[name=403blockRepeater, dest=user@yourdomain.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 maxretry = 35
 findtime = 31536000
@@ -231,9 +221,9 @@ bantime  = 31536000
 [nginx-req-limit]
 
 enabled  = true
+port     = http,https
 filter   = nginx-req-limit
 action   = iptables-multiport[name=ReqLimit, port="http,https", protocol=tcp]
-            sendmail-whois[name=ReqLimit, dest=user@yourmail.com, sender=root]
 logpath  = /var/log/nginx/*error.log
 findtime = 600
 bantime  = 7200
