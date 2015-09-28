@@ -70,6 +70,26 @@ maxretry = 6
 
 # HTTP servers
 
+[wordpress]
+
+enabled  = true
+port     = http,https
+filter   = wordpress
+logpath  = /var/log/auth.log
+maxretry = 6
+findtime = 7200
+bantime  = 86400
+
+[wordpress-userenum]
+
+enabled  = true
+port     = http,https
+filter   = wordpress-userenum
+logpath  = /var/log/auth.log
+maxretry = 1
+findtime = 3600
+bantime  = 2592000
+
 [nginx-badbots]
 
 enabled  = true

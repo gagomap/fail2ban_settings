@@ -1,6 +1,23 @@
 This is fail2ban settings for fail2ban 0.8.11 on Ubuntu 14.04 LTS
 
-## Install:
+## Install fail2ban
+
+```bash
+wget -O- http://neuro.debian.net/lists/trusty.us-ca.libre | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
+
+sudo apt-key adv --recv-keys --keyserver hkp://pgp.mit.edu:80 0xA5D32F012649A5A9
+
+sudo apt-get update
+
+sudo apt-get install fail2ban
+```
+
+Link: 
+```bash
+http://neuro.debian.net/install_pkg.html?p=fail2ban
+```
+
+## Install settings
 
 ```bash
 git clone git://github.com/gagomap/fail2ban_settings.git
@@ -36,4 +53,11 @@ location = /wp-login.php {
 Link:
 ```bash
 https://rtcamp.com/tutorials/nginx/fail2ban/
+```
+
+## Permanently Ban Repeat Offenders With fail2ban
+Link:
+
+```bash
+http://stuffphilwrites.com/2013/03/permanently-ban-repeat-offenders-fail2ban/
 ```
