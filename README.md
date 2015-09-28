@@ -61,3 +61,12 @@ Link:
 ```bash
 http://stuffphilwrites.com/2013/03/permanently-ban-repeat-offenders-fail2ban/
 ```
+## Stop user enumeration plugin
+Link:
+```bash
+https://github.com/recetasdemama/wordpress/tree/master/wp-content/plugins/stop-user-enumeration
+
+Or
+
+https://wordpress.org/plugins/stop-user-enumeration/
+```

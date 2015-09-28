@@ -87,7 +87,7 @@ port     = http,https
 filter   = wordpress-userenum
 logpath  = /var/log/auth.log
 maxretry = 1
-findtime = 3600
+findtime = 7200
 bantime  = 2592000
 
 [nginx-badbots]
