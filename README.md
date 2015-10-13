@@ -70,3 +70,9 @@ Or
 
 https://wordpress.org/plugins/stop-user-enumeration/
 ```
+
+## WP fail2ban plugin
+Link:
+```bash
+https://wordpress.org/plugins/wp-fail2ban/
+```
