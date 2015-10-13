@@ -191,7 +191,7 @@ bantime  = 86400
 [ssh-repeater]
 
 enabled  = true
-port     = 2186
+port     = 22
 filter   = sshd
 action   = iptables-repeater[name=ssh]
             sendmail-whois[name=sshRepeater, dest=adminvps@dautu365.com, sender=root]
