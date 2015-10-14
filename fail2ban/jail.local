@@ -194,7 +194,7 @@ enabled  = true
 port     = 22
 filter   = sshd
 action   = iptables-repeater[name=ssh]
-            sendmail-whois[name=sshRepeater, dest=adminvps@dautu365.com, sender=root]
+            sendmail-whois[name=sshRepeater, dest=user@yourdomain.com, sender=root]
 logpath  = /var/log/auth.log
 maxretry = 21
 findtime = 31536000
@@ -206,7 +206,7 @@ enabled  = true
 port     = http,https
 filter   = wordpress
 action   = iptables-repeater[name=wordpress]
-            sendmail-whois[name=wordpressRepeater, dest=adminvps@dautu365.com, sender=root]
+            sendmail-whois[name=wordpressRepeater, dest=user@yourdomain.com, sender=root]
 logpath  = /var/log/auth.log
 maxretry = 35
 findtime = 31536000
@@ -218,7 +218,7 @@ enabled  = true
 port     = http,https
 filter   = nginx-badrequests
 action   = iptables-repeater[name=badrequests]
-            sendmail-whois[name=badrequestsRepeater, dest=adminvps@dautu365.com, sender=root]
+            sendmail-whois[name=badrequestsRepeater, dest=user@yourdomain.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 maxretry = 35
 findtime = 31536000
@@ -230,7 +230,7 @@ enabled  = true
 port     = http,https
 filter   = 403block
 action   = iptables-repeater[name=403block]
-            sendmail-whois[name=403blockRepeater, dest=adminvps@dautu365.com, sender=root]
+            sendmail-whois[name=403blockRepeater, dest=user@yourdomain.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 maxretry = 35
 findtime = 31536000
