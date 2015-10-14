@@ -200,24 +200,25 @@ maxretry = 21
 findtime = 31536000
 bantime  = 31536000
 
-[wordpress-auth-repeater]
+[wordpress-repeater]
+
 enabled  = true
 port     = http,https
 filter   = wordpress
 action   = iptables-repeater[name=wordpress]
-            sendmail-whois[name=wordpress-repeater, dest=adminvps@dautu365.com, sender=root]
+            sendmail-whois[name=wordpressRepeater, dest=adminvps@dautu365.com, sender=root]
 logpath  = /var/log/auth.log
 maxretry = 35
 findtime = 31536000
 bantime  = 31536000
 
-[nginx-badrequests-repeater]
+[badrequests-repeater]
 
 enabled  = true
 port     = http,https
 filter   = nginx-badrequests
 action   = iptables-repeater[name=badrequests]
-            sendmail-whois[name=BadrequestsRepeater, dest=adminvps@dautu365.com, sender=root]
+            sendmail-whois[name=badrequestsRepeater, dest=adminvps@dautu365.com, sender=root]
 logpath  = /var/log/nginx/*access.log
 maxretry = 35
 findtime = 31536000
