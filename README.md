@@ -72,3 +72,20 @@ Link:
 ```bash
 https://wordpress.org/plugins/wp-fail2ban/
 ```
+
+## Another way to stop brute force ssh (your ssh port) port by using iptables
+
+```bash
+## we allow at max 5 new connections per minute
+
+$IPTABLES -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set
+$IPTABLES -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 -j DROP
+
+## Limit the amount of connections on port 22 per remote-ip
+
+$IPTABLES -A INPUT -p tcp --syn --dport 22 -m connlimit --connlimit-above 5 -j REJECT
+```
+Link:
+```bash
+https://github.com/bmaeser/iptables-boilerplate/issues/1#issuecomment-8935056
+```
