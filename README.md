@@ -22,7 +22,7 @@ http://neuro.debian.net/install_pkg.html?p=fail2ban
 ```bash
 git clone git://github.com/gagomap/fail2ban_settings.git
 ```
-Copy the folder name "fail2ban" inside fail2ban_settings to /etc/fail2ban  (use "cp -rf" to overwrite)
+Copy the folder name "fail2ban" inside fail2ban_settings to /etc/  (use "cp -rf" to overwrite)
 And run command
 
 ```bash
