@@ -31,7 +31,7 @@ service fail2ban restart
 
 ## Note:
 
-You can change user@yourdomain.com to your mail adress, and port 22 to your ssh port in jail.local.
+You can change destmail to your mail adress, and port 22 to your ssh port in jail.local.
 
 ## Nginx http limit requests module
 
