@@ -78,7 +78,7 @@ Link:
 https://wordpress.org/plugins/wp-fail2ban/
 ```
 
-## Another way to stop brute force ssh  port (your ssh port)by using iptables
+## Another method to stop brute force ssh  port (your ssh port)by using iptables
 
 ```bash
 ## we allow at max 5 new connections per minute
