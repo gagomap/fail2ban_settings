@@ -79,8 +79,8 @@ define('ANTISPAM_BEE_LOG_FILE', 'path/to/file/spam.log');
 On Debian or Ubuntu systems, you can do the following:
 
 ```bash
-sudo touch /path/to/spam.log
-sudo chown www-data:www-data /path/to/spam.log
+sudo touch /path/to/file/spam.log
+sudo chown www-data:www-data /path/to/file/spam.log
 ```
 Remember change path/to/file by your link to file spam.log
 
