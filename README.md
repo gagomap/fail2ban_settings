@@ -89,6 +89,7 @@ Link:
 ```bash
 https://github.com/pluginkollektiv/antispam-bee/wiki/Dokumentation#logdatei-f%C3%BCr-fail2ban
 https://gist.github.com/sergejmueller/5622883
+https://blog.shadypixel.com/spam-log-plugin/
 ```
 
 ## Stop user enumeration plugin (must install)
