@@ -56,6 +56,7 @@ location = /wp-login.php {
 ```
 
 Link:
+
 ```bash
 https://rtcamp.com/tutorials/nginx/fail2ban/
 ```
@@ -66,14 +67,33 @@ Link:
 ```bash
 http://stuffphilwrites.com/2013/03/permanently-ban-repeat-offenders-fail2ban/
 ```
+
+## Support Antispam-bee
+
+Add this line to wp-config.php of your website:
+
+```bash
+define('ANTISPAM_BEE_LOG_FILE', 'path/to/file/spam.log');
+```
+
+On Debian or Ubuntu systems, you can do the following:
+
+```bash
+sudo touch /path/to/spam.log
+sudo chown www-data:www-data /path/to/spam.log
+```
+Remember change path/to/file by your link to file spam.log
+
 ## Stop user enumeration plugin (must install)
 Link:
+
 ```bash
 https://wordpress.org/plugins/stop-user-enumeration/
 ```
 
 ## WP fail2ban plugin
 Link:
+
 ```bash
 https://wordpress.org/plugins/wp-fail2ban/
 ```
@@ -91,6 +111,7 @@ $IPTABLES -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --s
 $IPTABLES -A INPUT -p tcp --syn --dport 22 -m connlimit --connlimit-above 5 -j REJECT
 ```
 Link:
+
 ```bash
 https://github.com/bmaeser/iptables-boilerplate/issues/1#issuecomment-8935056
 ```
