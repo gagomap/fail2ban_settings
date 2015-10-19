@@ -68,7 +68,7 @@ Link:
 http://stuffphilwrites.com/2013/03/permanently-ban-repeat-offenders-fail2ban/
 ```
 
-## Support Antispam-bee
+## Support Antispam-bee Spam log 
 
 Add this line to wp-config.php of your website:
 
@@ -83,6 +83,13 @@ sudo touch /path/to/spam.log
 sudo chown www-data:www-data /path/to/spam.log
 ```
 Remember change path/to/file by your link to file spam.log
+
+Link:
+
+```bash
+https://github.com/pluginkollektiv/antispam-bee/wiki/Dokumentation#logdatei-f%C3%BCr-fail2ban
+https://gist.github.com/sergejmueller/5622883
+```
 
 ## Stop user enumeration plugin (must install)
 Link:
