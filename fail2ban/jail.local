@@ -200,14 +200,14 @@ maxretry = 2
 findtime = 3600
 bantime  = 86400
 
-[karem-block]
+[block-misc]
 
 enabled  = true
 port     = http,https
-filter   = karem-block
+filter   = block-misc
 logpath  = /var/log/nginx/*access.log
-maxretry = 1
-findtime = 3600
+maxretry = 2
+findtime = 86400
 bantime  = 2592000
 
 ###########Repeat ban ########
