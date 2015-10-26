@@ -173,7 +173,7 @@ bantime  = 2592000
 
 [nginx-nohome]
 
-enabled  = false
+enabled  = true
 port     = http,https
 filter   = nginx-nohome
 logpath  = /var/log/nginx/*access.log
@@ -183,7 +183,7 @@ bantime  = 86400
 
 [nginx-noproxy]
 
-enabled  = false
+enabled  = true
 port     = http,https
 filter   = nginx-noproxy
 logpath  = /var/log/nginx/*access.log
@@ -192,7 +192,7 @@ findtime = 3600
 bantime  = 86400
 
 [nginx-botsearch]
-enabled  = false
+enabled  = true
 port     = http,https
 filter   = nginx-botsearch
 logpath  = /var/log/nginx/*error.log
