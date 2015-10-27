@@ -23,7 +23,7 @@ http://neuro.debian.net/install_pkg.html?p=fail2ban
 git clone git://github.com/gagomap/fail2ban_settings.git
 ```
 Copy the folder name "fail2ban" inside fail2ban_settings to /etc/  (use "cp -rf" to overwrite)
-And run command
+And run command:
 
 ```bash
 service fail2ban restart
@@ -70,7 +70,7 @@ http://stuffphilwrites.com/2013/03/permanently-ban-repeat-offenders-fail2ban/
 
 ## Support Antispam-bee Spam log 
 
-Add this line to wp-config.php of your website:
+Add this line to wp-config.php of your website, before "/* That's all, stop editing! Happy blogging. */":
 
 ```bash
 define('ANTISPAM_BEE_LOG_FILE', 'path/to/file/spam.log');
@@ -91,6 +91,7 @@ https://github.com/pluginkollektiv/antispam-bee/wiki/Dokumentation#logdatei-f%C3
 https://gist.github.com/sergejmueller/5622883
 https://blog.shadypixel.com/spam-log-plugin/
 ```
+If you don't use antispambee, disbale antispam-bee jail in jail.local
 
 ## Stop user enumeration plugin (must install)
 Link:
@@ -99,7 +100,7 @@ Link:
 https://wordpress.org/plugins/stop-user-enumeration/
 ```
 
-## WP fail2ban plugin
+## WP fail2ban plugin (must intall)
 Link:
 
 ```bash
