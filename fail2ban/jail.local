@@ -104,7 +104,7 @@ bantime  = 2592000
 
 [nginx-badbots]
 
-enabled  = true
+enabled  = false
 port     = http,https
 filter   = apache-badbots
 logpath  = /var/log/nginx/*access.log
@@ -167,7 +167,7 @@ enabled  = true
 port     = http,https
 filter   = 404php-block
 logpath  = /var/log/nginx/*access.log
-maxretry = 10
+maxretry = 5
 findtime = 600
 bantime  = 3600
 
