@@ -168,7 +168,7 @@ port     = http,https
 filter   = 404php-block
 logpath  = /var/log/nginx/*access.log
 maxretry = 5
-findtime = 600
+findtime = 3600
 bantime  = 3600
 
 [php-url-fopen]
