@@ -161,6 +161,16 @@ maxretry = 3
 findtime = 3600
 bantime  = 86400
 
+[404php-block]
+
+enabled  = true
+port     = http,https
+filter   = 404php-block
+logpath  = /var/log/nginx/*access.log
+maxretry = 10
+findtime = 600
+bantime  = 3600
+
 [php-url-fopen]
 
 enabled  = true
