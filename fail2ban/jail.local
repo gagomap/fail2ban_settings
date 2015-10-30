@@ -272,11 +272,11 @@ bantime  = 31536000
 
 ################
 
-[nginx-req-limit]
+[nginx-limit-req]
 
 enabled  = true
 port     = http,https
-filter   = nginx-req-limit
+filter   = nginx-limit-req
 logpath  = /var/log/nginx/*error.log
 maxretry = 10
 findtime = 600
