@@ -122,12 +122,12 @@ maxretry = 3
 findtime = 7200
 bantime  = 86400
 
-[nginx-login]
+[nginx-nohome]
 
 enabled  = true
 port     = http,https
-filter   = nginx-login
-logpath  = /var/log/nginx/*access.log
+filter   = nginx-nohome
+logpath  = /var/log/nginx/*error.log
 maxretry = 3
 findtime = 7200
 bantime  = 86400
@@ -192,16 +192,6 @@ maxretry = 1
 findtime = 3600
 bantime  = 2592000
 
-[nginx-nohome]
-
-enabled  = true
-port     = http,https
-filter   = nginx-nohome
-logpath  = /var/log/nginx/*access.log
-maxretry = 2
-findtime = 3600
-bantime  = 86400
-
 [nginx-noproxy]
 
 enabled  = true
@@ -231,7 +221,18 @@ maxretry = 2
 findtime = 86400
 bantime  = 2592000
 
-###########Repeat ban ########
+##############################
+
+[suhosin]
+enabled  = true
+port     = http,https
+filter   = suhosin
+logpath  = /var/log/syslog
+maxretry = 1
+findtime = 3600
+bantime  = 3600
+
+########## Repeat ban ########
 
 [ssh-repeater]
 
@@ -281,7 +282,7 @@ maxretry = 35
 findtime = 31536000
 bantime  = 31536000
 
-################
+##############################
 
 [nginx-limit-req]
 
@@ -293,7 +294,7 @@ maxretry = 10
 findtime = 600
 bantime  = 7200
 
-################
+##############################
 
 # Mail server
 
