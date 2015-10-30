@@ -180,7 +180,7 @@ filter   = 404php-block
 logpath  = /var/log/nginx/*access.log
 maxretry = 5
 findtime = 3600
-bantime  = 3600
+bantime  = 600
 
 [php-url-fopen]
 
@@ -281,6 +281,18 @@ logpath  = /var/log/nginx/*access.log
 maxretry = 35
 findtime = 31536000
 bantime  = 31536000
+
+[404block-repeater]
+
+enabled  = true
+port     = http,https
+filter   = 404block
+action   = iptables-repeater[name=404block]
+            sendmail-whois[name=404blockRepeater, dest=adminvps@dautu365.com, sender=root]
+logpath  = /var/log/nginx/*access.log
+maxretry = 15
+findtime = 7200
+bantime  = 86400
 
 ##############################
 
