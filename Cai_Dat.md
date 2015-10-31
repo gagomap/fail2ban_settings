@@ -1,4 +1,6 @@
-## Trước tiên, chúng ta cài đặt fail2ban bằng lện
+## Đây là hướng dẫn cài đặt cho Debian7|8/ Ubuntu 12.04|14.04LTS. Nếu bạn muốn cài cho centos thì cần phải đổi đường dẫn các file log trong file jail.local cho phù hợp
+
+## Trước tiên, chúng ta cài đặt fail2ban bằng lệnh
 
 ```bash
 wget -O- http://neuro.debian.net/lists/trusty.us-ca.libre | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
