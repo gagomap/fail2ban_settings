@@ -38,7 +38,7 @@ Mặc định mình để địa chỉ mail trong file jail.local là ...@dautu3
 Bạn phải đổi lại địa chỉ mail này thành địa chỉ mail của bạn, để fail2ban gửi mail báo khi ban ip nào đó.
 Ngoài ra, bạn có thể đổi port ssh (mặc định là 22) trong file jail.local (sshd, sshd-dos, ssh-repeater) cho phù hợp.
 
-Nếu bạn không cài suhosin, hãy discable [suhosin] trong file jail.local (chuyển true thành false).
+### Nếu bạn không cài suhosin, hãy discable [suhosin] trong file jail.local (chuyển true thành false).
 
 ## Cài đặt thêm cho Wordpress:
 Bạn bắt buộc phải cài đặt thêm 2 plugin sau:
