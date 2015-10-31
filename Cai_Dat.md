@@ -31,7 +31,7 @@ service fail2ban restart
 ```
 
 ## Note:
-Mặc định mình để địa chỉ mail trong file jail.local là ...@dautu365.com
+Mặc định mình để địa chỉ mail trong file jail.local là ...@dautu365.com (tìm dòng: destmail=..., dest=...)
 Bạn phải đổi lại địa chỉ mail này thành địa chỉ mail của bạn, để fail2ban gửi mail báo khi ban ip nào đó
 Ngoài ra, bạn có thể đổi port ssh (mặc định là 22) trong file jail.local (sshd, sshd-dos, ssh-repeater) cho phù hợp.
 
