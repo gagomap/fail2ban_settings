@@ -31,6 +31,7 @@ Sau đó thực hiện lệnh:
 ```bash
 service fail2ban restart
 ```
+Khi nào bạn muốn cập nhật lại settings, thực hiện lại những lệnh trên.
 
 ## Note:
 Mặc định mình để địa chỉ mail trong file jail.local là ...@dautu365.com (tìm dòng: destmail=..., dest=...)
