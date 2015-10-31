@@ -43,14 +43,14 @@ Nếu bạn không cài suhosin, hãy discable [suhosin] trong file jail.local (
 ## Cài đặt thêm cho Wordpress:
 Bạn bắt buộc phải cài đặt thêm 2 plugin sau:
 
-# Stop user enumeration plugin - hỗ trợ chống dò username
+### Stop user enumeration plugin - hỗ trợ chống dò username
 
 Nguồn:
 ```bash
 https://wordpress.org/plugins/stop-user-enumeration/
 ```
 
-# WP fail2ban plugin - hỗ trợ chống brute forces đăng nhập wordpress 
+### WP fail2ban plugin - hỗ trợ chống brute forces đăng nhập wordpress 
 
 Nguồn:
 ```bash
@@ -74,7 +74,7 @@ sudo chown www-data:www-data /path/to/file/spam.log
 
 Bạn phải đổi path/to/file/spam.log  thành đường dẫn tới file spam.log (chẳng hạn /var/www/site_cua_ban.com/spam.log).
 
-# Chú ý: Nếu bạn không sử dụng antispam-bee, hãy vô hiệu hóa [antispam-bee] trong file jail.local (chuyển true thành false)
+### Chú ý: Nếu bạn không sử dụng antispam-bee, hãy vô hiệu hóa [antispam-bee] trong file jail.local (chuyển true thành false)
 
 Nguồn:
 ```bash
