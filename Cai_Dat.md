@@ -1,4 +1,4 @@
-## Đây là hướng dẫn cài đặt cho Debian7|8/ Ubuntu 12.04|14.04LTS. Nếu bạn muốn cài cho centos thì cần phải đổi đường dẫn các file log trong file jail.local cho phù hợp
+# Đây là hướng dẫn cài đặt cho Debian7|8/ Ubuntu 12.04|14.04LTS. Nếu bạn muốn cài cho centos thì cần phải đổi đường dẫn các file log trong file jail.local cho phù hợp
 
 ## Trước tiên, chúng ta cài đặt fail2ban bằng lệnh
 
@@ -57,6 +57,7 @@ Nguồn:
 https://wordpress.org/plugins/wp-fail2ban/
 ```
 ## Hỗ trợ thêm cho plugin chống spam Antispam-bee
+
 Antispam-bee là plugin chống spam cực kì hiệu quả, nó hỗ trợ ghi log ra file riêng, để fail2ban có thể đọc và ban ip.
 Bạn thêm dòng này vào file wp-config.php của site bạn, đặt trước dòng "/* That's all, stop editing! Happy blogging. */":
 
@@ -108,6 +109,7 @@ location = /wp-login.php {
 ```
 
 ## Ban vĩnh viễn ip nào đó lặp lại hành động sau khi đã bị ban.
+
 Đọc thêm tại đây:
 Nguồn:
 
