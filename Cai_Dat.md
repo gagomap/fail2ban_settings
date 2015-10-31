@@ -96,8 +96,8 @@ limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
 
 10m là kích cỡ của zone. 1MB có thể giữ 16000 states, hay 16000 địa chỉ IP. Trong trường hợp bạn có nhiều site trên 1 VPS hoặc site có truy cập cao, bạn có thể tăng kích cỡ của zone lên 20M hoặc 100M.
 
-1r/s (1request/s) nghĩa là trung bình 1 lượt yêu cầu/giây. Bạn có thể thay đổi tùy theo lượng truy cập site. Mặc định 1r/s tương đương với 60r/s. 
-Tuy nhiên không nên đặt quá cao, vì thường ddos > ~8r/s
+1r/s (1request/s) nghĩa là trung bình 1 lượt yêu cầu/giây. Bạn có thể thay đổi tùy theo lượng truy cập site. Mặc định 1r/s tương đương với 60r/p. 
+Tuy nhiên không nên đặt quá cao.
 Bất cứ lượt yêu cầu/giây vượt quá quy định, fail2ban sẽ tự động ban ngay lập tức ip đó. ([nginx-limit-req])
 
 Bạn có thể thêm dòng sau vào block server[..] để chống ddos cho đường dẫn cụ thể:
