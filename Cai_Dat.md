@@ -1,4 +1,4 @@
-### Đây là hướng dẫn cài đặt cho Debian7|8/ Ubuntu 12.04|14.04LTS. Nếu bạn muốn cài cho centos thì cần phải đổi đường dẫn các file log trong file jail.local cho phù hợp
+### Đây là hướng dẫn cài đặt cho Debian7|8/ Ubuntu 12.04|14.04LTS. Nếu bạn muốn cài cho centos thì cần phải đổi đường dẫn các file log trong file jail.local cho phù hợp. Thiết lập mặc định dùng cho nginx, tương thích hoàn toàn với EasyEngine.
 
 ## Trước tiên, chúng ta cài đặt fail2ban bằng lệnh
 
@@ -15,7 +15,6 @@ Link nguồn:
 ```bash
 http://neuro.debian.net/install_pkg.html?p=fail2ban
 ```
-
 
 ## Cập nhật settings bằng lệnh sau
 
@@ -96,9 +95,9 @@ limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
 
 10m là kích cỡ của zone. 1MB có thể giữ 16000 states, hay 16000 địa chỉ IP. Trong trường hợp bạn có nhiều site trên 1 VPS hoặc site có truy cập cao, bạn có thể tăng kích cỡ của zone lên 20M hoặc 100M.
 
-1r/s (1request/s) nghĩa là trung bình 1 lượt yêu cầu/giây. Bạn có thể thay đổi tùy theo lượng truy cập site. Mặc định 1r/s tương đương với 60r/p. 
+1r/s (1request/s) nghĩa là trung bình 1 lượt truy vấn/giây. Bạn có thể thay đổi tùy theo lượng truy cập site. Mặc định 1r/s tương đương với 60r/p. 
 Tuy nhiên không nên đặt quá cao.
-Bất cứ lượt yêu cầu/giây vượt quá quy định, fail2ban sẽ tự động ban ngay lập tức ip đó. ([nginx-limit-req])
+Bất cứ lượt truy cấn/giây vượt quá quy định, fail2ban sẽ tự động ban ngay lập tức ip đó. ([nginx-limit-req])
 
 Bạn có thể thêm dòng sau vào block server[..] để chống ddos cho đường dẫn cụ thể:
 
@@ -118,3 +117,11 @@ Nguồn:
 ```bash
 http://stuffphilwrites.com/2013/03/permanently-ban-repeat-offenders-fail2ban/
 ```
+
+## Hỗ trợ CSF và APF
+
+CSF: Configserver Security and Firewall
+APF: Advanced Policy Firewall
+
+Để cài đặt chung fail2ban với CSF hoặc APF, bạn cần đổi "banaction = iptables-multiport" trong file jail.local, thành csf hoặc apf (tương ứng với csf.conf hoặc apf.conf trong thư mục action.d)
+Để hỗ trợ ban vĩnh viễn ip như trên, bạn cần sửa lại file iptables-repeater.conf cho phù hợp. (Thay iptables bằng csf hoặc apf)
