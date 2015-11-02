@@ -97,7 +97,7 @@ limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
 
 1r/s (1request/s) nghĩa là trung bình 1 lượt truy vấn/giây. Bạn có thể thay đổi tùy theo lượng truy cập site. Mặc định 1r/s tương đương với 60r/p. 
 Tuy nhiên không nên đặt quá cao.
-Bất cứ lượt truy cấn/giây vượt quá quy định, fail2ban sẽ tự động ban ngay lập tức ip đó. ([nginx-limit-req])
+Bất cứ lượt truy vấn/giây vượt quá quy định, fail2ban sẽ tự động ban ngay lập tức ip đó. ([nginx-limit-req])
 
 Bạn có thể thêm dòng sau vào block server[..] để chống ddos cho đường dẫn cụ thể:
 
