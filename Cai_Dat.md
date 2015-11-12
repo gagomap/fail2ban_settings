@@ -39,6 +39,8 @@ Bạn phải đổi lại địa chỉ mail này thành địa chỉ mail của 
 
 Ngoài ra, bạn có thể đổi port ssh (mặc định là 22) trong file jail.local (sshd, sshd-dos, ssh-repeater) cho phù hợp.
 
+Trong file nginx-badbots.conf, bạn có thể thay đổi bot bạn muốn chặn. Mặc định mình chặn hai bot MJ12bot và Ahref, nếu bạn cần dùng hai bot này, hãy xóa nó ở dùng badbots=...
+
 #### Nếu bạn không cài suhosin, hãy discable [suhosin] trong file jail.local (chuyển true thành false).
 
 ## Cài đặt thêm cho Wordpress:
