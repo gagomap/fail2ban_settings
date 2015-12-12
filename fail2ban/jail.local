@@ -289,10 +289,10 @@ bantime  = 7200
 [mysqld-auth]
 
 enabled  = true
-port     = http,https
+port     = 3306
 filter   = mysqld-auth
 logpath  = /var/log/mysql/mysql.log
-maxretry = 3
+maxretry = 5
 findtime = 3600
 bantime  = 86400
 
