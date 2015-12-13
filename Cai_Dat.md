@@ -43,6 +43,22 @@ Trong file nginx-badbots.conf, bạn có thể thay đổi bot bạn muốn ch�
 
 #### Nếu bạn không cài suhosin, hãy discable [suhosin] trong file jail.local (chuyển true thành false).
 
+## Hỗ trợ chống Brute forece Mysql
+
+Bạn tạo file auth.conf tại thư mục /etc/mysql/conf.d với nội dung sau:
+
+```bash
+[mysqld]
+log_error = /var/log/mysql/error.log
+log-warning = 2
+```
+
+Sau đó khởi động lại mysql:
+
+```bash
+service mysql restart
+```
+
 ## Cài đặt thêm cho Wordpress:
 Bạn bắt buộc phải cài đặt thêm 2 plugin sau:
 
