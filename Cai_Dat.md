@@ -1,4 +1,4 @@
-### Đây là hướng dẫn cài đặt cho Debian7|8/ Ubuntu 12.04|14.04LTS. Nếu bạn muốn cài cho centos thì cần phải đổi đường dẫn các file log trong file jail.local cho phù hợp. Thiết lập mặc định dùng cho nginx, tương thích hoàn toàn với EasyEngine.
+### Đây là hướng dẫn cài đặt cho Debian7|8 hoặc Ubuntu 12.04|14.04LTS. Nếu bạn muốn cài cho Centos thì cần phải đổi đường dẫn các file log trong file jail.local cho phù hợp. Thiết lập mặc định dùng cho nginx, tương thích hoàn toàn với EasyEngine.
 
 ## Trước tiên, chúng ta cài đặt fail2ban bằng lệnh
 
@@ -25,12 +25,13 @@ chmod +x /usr/local/bin/install_fail2ban.sh
 
 sh /usr/local/bin/install_fail2ban.sh
 ```
-Sau đó thực hiện lệnh:
+Sau đó bạn có thể tùy chỉnh thiết lập rồi thực hiện lệnh:
 
 ```bash
 service fail2ban restart
 ```
 Khi nào bạn muốn cập nhật lại settings, thực hiện lại những lệnh trên.
+Đường dẫn mặc định của file jail.local là ```/etc/fail2ban/jail.local```
 
 ## Note:
 Mặc định mình để địa chỉ mail trong file jail.local là ...@dautu365.com (tìm dòng: destmail=..., dest=...).
@@ -41,9 +42,9 @@ Ngoài ra, bạn có thể đổi port ssh (mặc định là 22) trong file jai
 
 Trong file nginx-badbots.conf, bạn có thể thay đổi bot bạn muốn chặn. Mặc định mình chặn hai bot MJ12bot và Ahref, nếu bạn cần dùng hai bot này, hãy xóa nó ở dùng badbots=...
 
-#### Nếu bạn không cài suhosin, hãy discable [suhosin] trong file jail.local (chuyển true thành false).
+#### Nếu bạn không cài suhosin, hãy disable [suhosin] trong file jail.local (chuyển true thành false).
 
-## Hỗ trợ chống Brute forece Mysql
+## Hỗ trợ chống Brute forece Mysql, đặc biệt khi bị tấn công qua XSS, SQL injection,...
 
 Bạn tạo file auth.conf tại thư mục /etc/mysql/conf.d với nội dung sau:
 
