@@ -1,5 +1,5 @@
 ### Đây là hướng dẫn cài đặt cho Debian7|8 hoặc Ubuntu 12.04|14.04LTS. Nếu bạn muốn cài cho Centos thì cần phải đổi đường dẫn các file log trong file jail.local cho phù hợp. Thiết lập mặc định dùng cho nginx, tương thích hoàn toàn với EasyEngine.
-### Chú ý cách bảo mật tốt nhất vẫn là đặt mật khẩu >20 kí tự gồm các kí tự gồm số, chữ thường, chữ in hoa và các kí tự đặc biệt. Đặc biệt nên sử dụng ssh key khi đăng nhập vps qua ssh. Bạn cũng có thể dùng KeePass để tạo và quản lý mật khẩu.
+### Chú ý: cách bảo mật tốt nhất vẫn là đặt mật khẩu >20 kí tự gồm các kí tự gồm số, chữ thường, chữ in hoa và các kí tự đặc biệt. Đặc biệt nên sử dụng ssh key khi đăng nhập vps qua ssh. Bạn cũng có thể dùng KeePass để tạo và quản lý mật khẩu.
 
 ## Trước tiên, chúng ta cài đặt fail2ban bằng lệnh
 
