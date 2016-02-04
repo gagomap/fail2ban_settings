@@ -214,7 +214,7 @@ bantime  = 2592000
 ##############################
 
 [suhosin]
-enabled  = true
+enabled  = false
 port     = http,https
 filter   = suhosin
 logpath  = /var/log/syslog
