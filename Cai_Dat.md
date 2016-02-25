@@ -35,7 +35,7 @@ Khi nào bạn muốn cập nhật lại settings, thực hiện lại những l
 Đường dẫn mặc định của file jail.local là ```/etc/fail2ban/jail.local```
 
 ## Note:
-Mặc định mình để địa chỉ mail trong file jail.local là ...@dautu365.com (tìm dòng: destmail=..., dest=...).
+Mặc định mình để địa chỉ mail trong file jail.local là yourmail@domain.com (tìm dòng: destmail=..., dest=...).
 
 Bạn phải đổi lại địa chỉ mail này thành địa chỉ mail của bạn, để fail2ban gửi mail báo khi ban ip nào đó.
 
