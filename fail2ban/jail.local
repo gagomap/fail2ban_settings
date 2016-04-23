@@ -82,13 +82,23 @@ bantime  = 2592000
 
 # HTTP servers
 
-[wordpress]
+[wordpress-soft]
 
 enabled  = true
 port     = http,https
-filter   = wordpress
+filter   = wordpress-soft
 logpath  = /var/log/auth.log
 maxretry = 3
+findtime = 7200
+bantime  = 86400
+
+[wordpress-hard]
+
+enabled  = true
+port     = http,https
+filter   = wordpress-hard
+logpath  = /var/log/auth.log
+maxretry = 1
 findtime = 7200
 bantime  = 86400
 
