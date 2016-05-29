@@ -250,7 +250,19 @@ bantime  = 31536000
 
 enabled  = true
 port     = http,https
-filter   = wordpress
+filter   = wordpress-soft
+action   = iptables-repeater[name=wordpress]
+            sendmail-whois[name=wordpressRepeater, dest=adminvps@dautu365.com, sender=root]
+logpath  = /var/log/auth.log
+maxretry = 35
+findtime = 31536000
+bantime  = 31536000
+
+[wordpress-repeater]
+
+enabled  = true
+port     = http,https
+filter   = wordpress-hard
 action   = iptables-repeater[name=wordpress]
             sendmail-whois[name=wordpressRepeater, dest=adminvps@dautu365.com, sender=root]
 logpath  = /var/log/auth.log
