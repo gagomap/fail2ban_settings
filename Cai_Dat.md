@@ -45,7 +45,7 @@ Trong file nginx-badbots.conf, bạn có thể thay đổi bot bạn muốn ch�
 
 #### Nếu bạn không cài suhosin, hãy disable [suhosin] trong file jail.local (chuyển true thành false).
 
-## Hỗ trợ chống Brute forece Mysql, đặc biệt khi bị tấn công qua XSS, SQL injection,...
+## Hỗ trợ chống Brute forece Mysql, đặc biệt khi bị tấn công qua XSS, SQL injection,... (Default: Off)
 
 Bạn tạo file auth.conf tại thư mục /etc/mysql/conf.d với nội dung sau:
 

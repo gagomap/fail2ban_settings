@@ -310,7 +310,7 @@ bantime  = 7200
 
 [mysqld-auth]
 
-enabled  = true
+enabled  = false
 port     = 3306
 filter   = mysqld-auth
 logpath  = /var/log/mysql/error.log
